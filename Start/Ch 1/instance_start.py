@@ -22,6 +22,7 @@ class Book:
     
     def setdiscount(self, amount):
         self._discount = amount
+        # _discount is internal to the Book class
 
 
 # TODO: create some book instances
@@ -38,4 +39,8 @@ b2.setdiscount(0.25)
 print(b2.getprice())
 
 # TODO: properties with double underscores are hidden by the interpreter
-print(b2.__secret())
+# so this line will fail
+# print(b2.__secret())
+
+# this line gets around the 'secret' attribute
+print(b2._Book__secret)
